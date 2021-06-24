@@ -25,7 +25,7 @@ SECRET_KEY = '#y4g7_4j8&mzf*xcgu$6c*siw^sh2cc7sr_(+5vvfhyfw*5-44'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dang-env.eba-krkjr2af.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['dang-env.eba-krkjr2af.us-east-1.elasticbeanstalk.com', '34.193.239.130']
 
 
 # Application definition
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'contact',
     'home',
     'profiles',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -98,7 +99,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
