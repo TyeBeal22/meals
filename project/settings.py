@@ -25,7 +25,7 @@ SECRET_KEY = '#y4g7_4j8&mzf*xcgu$6c*siw^sh2cc7sr_(+5vvfhyfw*5-44'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dang-env.eba-krkjr2af.us-east-1.elasticbeanstalk.com', '34.193.239.130']
+ALLOWED_HOSTS = ['ddat-env.eba-ziqehihp.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
