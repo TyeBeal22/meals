@@ -152,8 +152,8 @@ DEFAULT_FROM_EMAIL = 'dangdatsdelicious@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = config('EMAIL_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+EMAIL_USE_TLS = config('TLS')
+EMAIL_PORT = config('E_PORT')
 
 
 from django.contrib.messages import constants as messages
