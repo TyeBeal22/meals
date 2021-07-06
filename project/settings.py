@@ -15,7 +15,7 @@ SECRET_KEY = config('KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fapp-env.eba-s3hr6uwe.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -74,6 +74,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+AUTH_USER_MODEL = 'accounts.Account'
+
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
@@ -94,7 +96,7 @@ else:
     }
 
 
-AUTH_USER_MODEL = 'accounts.Account'
+
 
 
 
