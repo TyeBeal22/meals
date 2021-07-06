@@ -15,7 +15,7 @@ SECRET_KEY = config('KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = ['fapp-env.eba-s3hr6uwe.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
