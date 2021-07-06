@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from accounts.models import Account
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 # Create your models here.
@@ -7,7 +8,6 @@ from taggit.managers import TaggableManager
 class Post(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
-    author = models.ForeignKey(User , on_delete=models.CASCADE)
     image = models.ImageField(upload_to='blog/'  , blank=True, null=True)
     # tags
     category = models.ForeignKey('Category'  ,null=True, on_delete=models.SET_NULL)
@@ -37,7 +37,7 @@ class Category(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(User , on_delete=models.CASCADE)
+    email = models.CharField(max_length=50,null=True,blank=True)
     post = models.ForeignKey(Post , on_delete=models.CASCADE)
     content = models.TextField()
     created = models.DateTimeField(default=timezone.now)

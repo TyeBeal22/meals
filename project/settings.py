@@ -1,7 +1,7 @@
 
 
 import os
-
+from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -10,12 +10,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#y4g7_4j8&mzf*xcgu$6c*siw^sh2cc7sr_(+5vvfhyfw*5-44'
+SECRET_KEY = config('KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = ['dang-env.eba-mredixin.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['rest.eba-k34jyppn.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'aboutus',
     'contact',
     'home',
-    'profiles',
     'core',
+    'accounts',
+    'admin_honeypot',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
@@ -89,15 +89,17 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 
 
+AUTH_USER_MODEL = 'accounts.Account'
 
 
-# Password validation
-# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
+
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -148,8 +150,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'dangdatsdelicious@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'darthtye@gmail.com'
-EMAIL_HOST_PASSWORD = 'LordVador22'
+EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 

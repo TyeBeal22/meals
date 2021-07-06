@@ -6,14 +6,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('securelogin/', admin.site.urls),
     path('meals/' , include('meals.urls' , namespace='meals')),
     path('blog/' , include('blog.urls' , namespace='blog')),
     path('contact/' , include('contact.urls' , namespace='contact')),
     path('about-us/' , include('aboutus.urls' , namespace='aboutus')),
     path('reserve_table/' , include('reservation.urls' , namespace='reservation')),
     path('' , include('home.urls' , namespace='home')),
-    
+    path('accounts/', include('accounts.urls')),   
 ]
 
 

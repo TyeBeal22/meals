@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.text import slugify
-from profiles.models import Profile
 from datetime import datetime
 import random
 import uuid
