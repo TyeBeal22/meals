@@ -1,4 +1,9 @@
-Django==2.2.12
+asgiref==3.2.10
+boto3==1.17.36
+botocore==1.20.36
+certifi==2020.12.5
+chardet==4.0.0
+Django==3.1
 django-admin-honeypot==1.1.0
 django-allauth==0.39.1
 django-bootstrap4==2.3.1
@@ -9,6 +14,7 @@ django-crispy-forms==1.9.1
 django-environ==0.4.5
 django-rest-auth==0.9.5
 django-summernote==0.8.11.6
+django-storages==1.11.1
 django-taggit==1.3.0
 djangocms-admin-style==1.5.0
 djangocms-animate-on-scroll==1.0.1
