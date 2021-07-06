@@ -14,7 +14,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=True, cast=bool) # True
 
-ALLOWED_HOSTS = ['food-env.eba-jgt3yifq.us-east-1.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = ['fus-env.eba-m3una9p3.us-east-1.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
@@ -163,7 +163,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'dangdatsdelicious@gmail.com'
-EMAIL_HOST = config('smtp.gmail.com')
+EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
