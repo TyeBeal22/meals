@@ -15,7 +15,7 @@ SECRET_KEY = config('KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = ['draco-env.eba-buqgjfye.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['food-env.eba-jevthh9f.us-east-1.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
