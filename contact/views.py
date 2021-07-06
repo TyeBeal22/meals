@@ -70,7 +70,7 @@ def order(request):
            'Dang Dats Delicious Order',
             'There has been an order for ' + meal + '. By Customer ' + name + '. Your Order # is ' + str(ref_num) + '. Thank you for shopping with DangDatsDelicious',
            'darthtye@gmail.com',
-           ['darthtye@gmail.com',email],
+           ['dangdatsdelicious@gmail.com',email],
            fail_silently=False
          )
 
