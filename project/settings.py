@@ -15,7 +15,7 @@ SECRET_KEY = config('KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = ['datzd-env.eba-m3xsmjxm.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['draco-env.eba-buqgjfye.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -92,7 +92,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
