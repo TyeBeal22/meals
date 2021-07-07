@@ -14,7 +14,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=True, cast=bool) # True
 
-ALLOWED_HOSTS = ['fus-env.eba-m3una9p3.us-east-1.elasticbeanstalk.com','127.0.0.1']
+ALLOWED_HOSTS = ['mo-env.eba-yuj7pyvy.us-east-1.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
@@ -91,7 +91,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
@@ -161,7 +161,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = config('EMAIL_BACKEND')
 DEFAULT_FROM_EMAIL = 'dangdatsdelicious@gmail.com'
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
